@@ -19,14 +19,14 @@ class ProfitCalculator extends Component {
   }
 
   componentDidMount() {
-    let api_url = process.env.NODE_ENV === 'development' ? 'http://localhost:3001/api/v1/banks.json' : 'https://mighty-shore-58376.herokuapp.com'
+    let api_url = process.env.NODE_ENV === 'development' ? 'http://localhost:3001/api/v1/banks.json' : 'https://mighty-shore-58376.herokuapp.com/api/v1/banks.json'
     axios.get(api_url)
-    .then(response => {
+      .then(response => {
         this.setState({
-            banks: response.data
+          banks: response.data
         })
-    })
-    .catch(error => console.log(error))
+      })
+      .catch(error => console.log(error))
   }
 
   onCurrencyChange = e => {
@@ -36,7 +36,7 @@ class ProfitCalculator extends Component {
   onBankChange = e => {
     let current_bank = this.state.banks.filter(bank => bank.id == e.target.value)[0]
     this.setState({ 
-      current_bank, 
+      current_bank,
       current_plans: current_bank.fixed_deposit_plans,
       profit: 0,
       profit_percentage: 0,
@@ -67,6 +67,7 @@ class ProfitCalculator extends Component {
       <div >
         <div className="ProfitCalculator">
           <select onChange={this.onBankChange} className='select'>
+            console.log(this.state)
             {this.state.banks.map( bank => <option value={bank.id} key={bank.id}>{bank.name}</option>)}
           </select>
           <select className='select' onChange={this.onCurrencyChange}>
@@ -86,7 +87,6 @@ class ProfitCalculator extends Component {
           <p className='text-center'>Este es el porcentaje: {this.state.profit_percentage}%</p>
         </div>
       </div>
-    
     );
   }
 }
