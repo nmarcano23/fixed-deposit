@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_18_230817) do
+ActiveRecord::Schema.define(version: 2019_05_19_025537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_05_18_230817) do
     t.bigint "bank_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "days"
     t.index ["bank_id"], name: "index_fixed_deposit_plans_on_bank_id"
   end
 

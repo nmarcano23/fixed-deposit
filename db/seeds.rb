@@ -11,41 +11,41 @@ banks = [
   {
     name: 'Banco Santander Rio',
     plans: [
-      {name: 'low', percentage: 3},
-      {name: 'soft', percentage: 6},
-      {name: 'high', percentage: 9}
+      {name: 'low', percentage: 3, days: 30},
+      {name: 'soft', percentage: 6, days: 60},
+      {name: 'high', percentage: 9, days: 90}
     ]
   },
   {
     name: 'Banco Nacion',
     plans: [
-      {name: 'low', percentage: 4},
-      {name: 'soft', percentage: 7},
-      {name: 'high', percentage: 10}
+      {name: 'low', percentage: 4, days: 30},
+      {name: 'soft', percentage: 7, days: 60},
+      {name: 'high', percentage: 10, days: 90}
     ]
   },
   {
     name: 'Banco de Galicia',
     plans: [
-      {name: 'low', percentage: 13},
-      {name: 'soft', percentage: 16},
-      {name: 'high', percentage: 19}
+      {name: 'low', percentage: 13, days: 30},
+      {name: 'soft', percentage: 16, days: 60},
+      {name: 'high', percentage: 19, days: 90}
     ]
   },
   {
     name: 'BBVA',
     plans: [
-      {name: 'low', percentage: 21},
-      {name: 'soft', percentage: 24},
-      {name: 'high', percentage: 27}
+      {name: 'low', percentage: 21, days: 30},
+      {name: 'soft', percentage: 24, days: 60},
+      {name: 'high', percentage: 27, days: 90}
     ]
   },
   {
     name: 'Banco Comafi',
     plans: [
-      {name: 'low', percentage: 30},
-      {name: 'soft', percentage: 33},
-      {name: 'high', percentage: 36}
+      {name: 'low', percentage: 30, days: 30},
+      {name: 'soft', percentage: 33, days: 60},
+      {name: 'high', percentage: 36, days: 90}
     ]
   }
 ]
@@ -53,6 +53,6 @@ banks = [
 banks.each do |bank_attributes|
   bank = Bank.find_or_create_by(name: bank_attributes[:name])
   bank_attributes[:plans].each do |plan_attributes|
-    bank.fixed_deposit_plans.find_or_create_by(name: plan_attributes[:name], percentage: plan_attributes[:percentage])
+    bank.fixed_deposit_plans.find_or_create_by(plan_attributes)
   end
 end

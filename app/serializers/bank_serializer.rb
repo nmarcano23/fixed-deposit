@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: banks
+#
+#  id         :bigint           not null, primary key
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class BankSerializer < ActiveModel::Serializer
   attributes :id, :name, :fixed_deposit_plans
   
@@ -6,6 +16,7 @@ class BankSerializer < ActiveModel::Serializer
       {
         id: fixed_deposit_plan.id, 
         name: fixed_deposit_plan.name, 
+        days: fixed_deposit_plan.days, 
         percentage: fixed_deposit_plan.percentage,
       }
     end 

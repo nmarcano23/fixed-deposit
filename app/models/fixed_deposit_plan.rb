@@ -3,6 +3,7 @@
 # Table name: fixed_deposit_plans
 #
 #  id         :bigint           not null, primary key
+#  days       :integer
 #  name       :string
 #  percentage :integer
 #  created_at :datetime         not null
