@@ -34,6 +34,7 @@ Para correr la aplicacion es necesario seguir los siguentes pasos:
   # Implementaciones realizadas
   - Serializacion de datos
   - versionamiento de API
+  - Se implemento una tabla para la administracion de los planes de deposito a plazo fijo que posee un banco, esto lo hace mas escalable, se altero la estructura inicial del hash en consecuencia
   
   # WIP
   - Dockerizar
@@ -41,3 +42,4 @@ Para correr la aplicacion es necesario seguir los siguentes pasos:
   - Mejorar estilos del frontend
   - Mejorar interaccion
   - Implementacion de pruebas de codigo
+  - Implementar react router para el manejo de distintas vistas, por ejemplo, completar el CRUD de bancos y sus planes de depositos.
