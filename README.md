@@ -8,8 +8,8 @@ Obtén cuanto es la ganancia de tu deposito a plazo fijo dependiendo del banco, 
 **Database**: Postgres  
 **Rails version**: 5.2.3  
 **Ruby version**: 2.6.3  
-**NodeJS version**: 10.15.3 (usada durante el desarrollo)  
-**Postgres version**: 11.3  (usada durante el desarrollo) 
+**NodeJS version**: 10.15.3
+**Postgres version**: 11.3  (version usada durante el desarrollo) 
 
 # Uso
 

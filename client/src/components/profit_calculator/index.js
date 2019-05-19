@@ -19,13 +19,14 @@ class ProfitCalculator extends Component {
   }
 
   componentDidMount() {
-      axios.get('http://localhost:3001/api/v1/banks.json')
-      .then(response => {
-          this.setState({
-              banks: response.data
-          })
-      })
-      .catch(error => console.log(error))
+    let api_url = process.env.NODE_ENV === 'development' ? 'http://localhost:3001/api/v1/banks.json' : 'https://mighty-shore-58376.herokuapp.com'
+    axios.get(api_url)
+    .then(response => {
+        this.setState({
+            banks: response.data
+        })
+    })
+    .catch(error => console.log(error))
   }
 
   onCurrencyChange = e => {
